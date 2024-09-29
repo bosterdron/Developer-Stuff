@@ -40,9 +40,6 @@ local Library = {
 }
 
 
-local ConfigsController = {}
-Library.flags = current_config
-
 local UIManager = {}
 
 function UIManager.refresh_tabs(Tab: TextButton)
@@ -754,13 +751,12 @@ function Library:create()
 			Tab.MouseButton1Click:Connect(function()
 				update_module(true)
 
-				ConfigsController.save(game.GameId, Library.flags)
 			end)
 
 			Tab.TouchTap:Connect(function()
 				update_module(true)
 
-				ConfigsController.save(game.GameId, Library.flags)
+
 			end)
 
 			local SettingsController = {}
@@ -864,13 +860,12 @@ function Library:create()
 				Toggle.MouseButton1Click:Connect(function()
 					update_toggle(true)
 
-					ConfigsController.save(game.GameId, Library.flags)
 				end)
 
 				Toggle.TouchTap:Connect(function()
 					update_toggle(true)
 
-					ConfigsController.save(game.GameId, Library.flags)
+
 				end)
 			end
 
@@ -970,7 +965,7 @@ function Library:create()
 						Size = UDim2.new(output, 0, 0, 10)
 					}):Play()
 
-					ConfigsController.save(game.GameId, Library.flags)
+
 				end
 				local slider_active = false :: boolean
 
@@ -1131,7 +1126,6 @@ function Library:create()
 						}):Play()
 						
 						Library.flags[self.flag] = value
-						ConfigsController.save(game.GameId, Library.flags)
 					end)
 
 					Mode.TouchTap:Connect(function()
@@ -1148,7 +1142,7 @@ function Library:create()
 						}):Play()
 						
 						Library.flags[self.flag] = value
-						ConfigsController.save(game.GameId, Library.flags)
+	
 					end)
 				end
 
