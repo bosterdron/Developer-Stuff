@@ -41,8 +41,6 @@ local Library = {
 
 
 local ConfigsController = {}
-
-local current_config = ConfigsController.load(game.GameId, Library.flags)
 Library.flags = current_config
 
 local UIManager = {}
